@@ -116,8 +116,8 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground flex items-center gap-1.5">
-            © {currentYear} Built with{" "} by Saad Bilal
-            <Heart className="h-3.5 w-3.5 text-red-500 fill-red-500" />
+            © {currentYear} Built with{" "} 
+            <Heart className="h-3.5 w-3.5 text-red-500 fill-red-500" />by Saad Bilal
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
             <Link href="/privacy" className="hover:text-foreground transition-colors">
