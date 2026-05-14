@@ -40,7 +40,7 @@ const nextConfig = {
   images: {
     unoptimized: true, // Disables standard image optimization incompatible with static exports
   },
-  basePath: '/your-repo-name', // Replace with your exact GitHub repository name
+  basePath: '/website', // Replace with your exact GitHub repository name
 };
 
 export default nextConfig;
