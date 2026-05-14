@@ -1,0 +1,56 @@
+name: Deploy Next.js Site to Pages (Saad Bilal)
+
+on:
+  push:
+    branches: ["main"] # Triggers deployment when you push code to your main branch
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: ${{ hashFiles('package-lock.json') != '' && 'npm' || hashFiles('yarn.lock') != '' && 'yarn' || 'pnpm' }}
+
+      - name: Setup GitHub Pages Config
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Install Project Dependencies
+        run: |
+          if [ -f package-lock.json ]; then npm ci;
+          elif [ -f yarn.lock ]; then yarn install --frozen-lockfile;
+          elif [ -f pnpm-lock.yaml ]; then corepack enable && pnpm i --frozen-lockfile;
+          else npm install;
+          fi
+
+      - name: Build and Export Static Site
+        run: |
+          if [ -f package-lock.json ]; then npm run build;
+          elif [ -f yarn.lock ]; then yarn build;
+          elif [ -f pnpm-lock.yaml ]; then pnpm build;
+          else npm run build;
+          fi
+
+      - name: Upload Static Build Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out # Next.js static output directory
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
