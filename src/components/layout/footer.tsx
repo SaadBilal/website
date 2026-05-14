@@ -116,7 +116,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground flex items-center gap-1.5">
-            © {currentYear} Saad Bilal. Built with{" "}
+            © {currentYear} Built with{" "} by Saad Bilal
             <Heart className="h-3.5 w-3.5 text-red-500 fill-red-500" /> using
             Next.js & Tailwind CSS.
           </p>
