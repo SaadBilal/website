@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
-export const dynamic = 'force-static';
+//export const dynamic = 'force-static';
 
 // Rate limiting store (in-memory for simplicity; use Redis in production)
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
