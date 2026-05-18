@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/data/blog";
-//export const dynamic = 'force-static';
+export const dynamic = 'force-static';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://saadbilal.dev";
 
