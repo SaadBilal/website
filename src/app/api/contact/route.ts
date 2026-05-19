@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
-//export const dynamic = 'force-static';
+export const dynamic = 'force-static';
 
 // Rate limiting store (in-memory for simplicity; use Redis in production)
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
@@ -133,7 +133,7 @@ export async function POST(request: NextRequest) {
   <div class="container">
     <div class="header">
       <h1>📬 New Contact Form Submission</h1>
-      <p>Portfolio contact form — saadbilal.dev</p>
+      <p>Portfolio contact form — iamsaadbilal</p>
     </div>
     <div class="body">
       <div class="field">
@@ -155,7 +155,7 @@ export async function POST(request: NextRequest) {
       </div>
     </div>
     <div class="footer">
-      Sent from saadbilal.dev contact form · ${new Date().toUTCString()}
+      Sent from iamsaadbilal contact form · ${new Date().toUTCString()}
     </div>
   </div>
 </body>

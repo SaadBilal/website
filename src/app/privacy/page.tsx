@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy policy for saadbilal.dev",
+  description: "Privacy policy for iamsaadbilal",
 };
 
 export default function PrivacyPage() {
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
               <p>
                 For any privacy-related questions, contact me at{" "}
                 <a href="mailto:iamsaadbilal@gmail.com" className="text-primary hover:underline">
-                  saad@saadbilal.dev
+                  iamsaadbilal@gmail.com
                 </a>
               </p>
             </section>
