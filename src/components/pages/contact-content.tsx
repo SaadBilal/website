@@ -403,7 +403,7 @@ export function ContactContent() {
                               ? "border-destructive"
                               : "border-border"
                           }`}
-                          placeholder="john@company.com"
+                          placeholder="saad@company.com"
                         />
                         {errors.email && (
                           <p className="mt-1 text-xs text-destructive">
